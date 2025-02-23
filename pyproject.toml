@@ -3,19 +3,19 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "parse_this"
+name = "parsethis"
 version = "0.1.0"
 description = "A Python library to extract text from various sources for LLM preprocessing."
 readme = "README.md"
 requires-python = ">=3.10, <4.0"
-license = {text = "MIT License"}
+license = {text = "GNU Affero General Public License v3.0"}
 authors = [
   { name = "Jörn Depenbrock", email = "joern@jdde.de" }
 ]
 keywords = ["text extraction", "LLM", "PDF", "web", "preprocessing"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU Affero General Public License v3.0",
     "Operating System :: OS Independent"
 ]
 
