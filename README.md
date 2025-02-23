@@ -134,7 +134,7 @@ Overview of dependencies used for specific parsing processes.
 If you're working with the source code, you can install all dependencies using:
 
 ```bash
-pip install -r requirements.txt
+pip install .
 ```
 
 
