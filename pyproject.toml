@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "parse_this"
+version = "0.1.0"
+description = "A Python library to extract text from various sources for LLM preprocessing."
+readme = "README.md"
+requires-python = ">=3.10, <4.0"
+license = {text = "MIT License"}
+authors = [
+  { name = "Jörn Depenbrock", email = "joern@jdde.de" }
+]
+keywords = ["text extraction", "LLM", "PDF", "web", "preprocessing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+# requirements.txt generated from here
+dependencies = [
+  "requests",
+  "PyPDF2",  # Keep PyPDF2 as primary PDF parser
+  "coverage",
+  "openai",
+  "filetype",
+  "scrapegraphai",
+  "youtube_transcript_api",
+  "loguru",
+  "gitingest",
+  "aiohttp",
+  "markitdown",  # Add Markitdown for enhanced document parsing
+  "beautifulsoup4",  # Required for HTML parsing
+]
+
+# requirements-dev.txt generated from here
+[project.optional-dependencies]
+dev = [
+  "coverage",
+  "coverage-badge",
+  "pytest"
+]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]

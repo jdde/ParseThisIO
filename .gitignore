@@ -1,0 +1,7 @@
+./venv/
+./myenv/
+myenv/
+__pycache__/
+src/build
+build/
+*.egg-info/
