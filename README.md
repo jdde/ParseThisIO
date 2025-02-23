@@ -11,24 +11,35 @@ Just install as a pip package and enjoy, no configuring around with third party 
 
 For some parsers there are API Key's required. They're not required, when you just dont use them - they will error on usage when no api key was found.
 
+ParseThis aggregates multiple open source projects to avoid re-implementing a file type mapping for content conversion.
+
 ## Table of Contents
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [ParserMatrix - Dependency overview](#ParserMatrix)
-
+- [Testing](#Testing)
+- [License](#License)
 
 ---
 
 ## Features
-- Auto-detects file types (PDF, DOCX, CSV, and more).
-- Converts files into readable Markdown or plain text.
+- Auto-detects file types (pdf, docx, csv, pptx, xlsx, xls, json, xml, zip, mp3, mp4 and more).
+- Converts any file into readable Markdown or plain text.
 - Extracts structured data for use in LLM and RAG pipelines.
 - Simple API for seamless integration into your workflows.
+- Just forward user input to ParseThis and get Text || markdown.
 
 The mapping of parser to file type can be found in the [ParserMatrix](#parsermatrix---when-is-which-dependency-used).
+
+```python
+import parsethis
+
+#get list of supported file extensions via 
+parsethis.get_supported_extensions()
+```
+
 
 ---
 
@@ -48,11 +59,10 @@ To install **ParseThis**, use pip:
 ```bash
 pip install parsethis
 ```
-For more information, see the [how we install in our github action](.github/workflows/coverage.yml).
 
 ---
 
-### Usage
+## Usage
 Use the parse() function to auto-detect the current type of content - when the autodetection is not working you can provide more information to help detect the type.
 The auto-parse function accepts any input - file_path, url strings, file byte content.
 ```python
@@ -99,7 +109,7 @@ with open('tests/fixtures/text_data_meeting_notes.pdf', 'rb') as f:
     text = parser.parse(file_content)
 ```
 
-Or just directly use a any parser.
+Or just directly use a parser.
 ```python
 from parsethis import PDFParser
 
@@ -107,7 +117,7 @@ with open('tests/fixtures/text_data_meeting_notes.pdf', 'rb') as f:
     text = PDFParser.parse(file_content)
 ```
 
-For more examples how to use it - see our [testing section](tests/test_automatic_parsing.py).
+For more examples how to use it - see our [testing section](tests/test_automatic_parser_selection.py).
 
 ---
 
@@ -134,8 +144,9 @@ Overview of dependencies used for specific parsing processes.
 If you're working with the source code, you can install all dependencies using:
 
 ```bash
-pip install -r requirements.txt
+pip install .
 ```
+For more information, see the [how we install it in our github action](.github/workflows/coverage.yml).
 
 
 ## Testing
