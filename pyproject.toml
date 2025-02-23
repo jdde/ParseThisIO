@@ -15,7 +15,6 @@ authors = [
 keywords = ["text extraction", "LLM", "PDF", "web", "preprocessing"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: GNU Affero General Public License v3.0",
     "Operating System :: OS Independent"
 ]
 
@@ -42,7 +41,6 @@ dev = [
   "coverage-badge",
   "pytest"
 ]
-
 
 [tool.setuptools.packages.find]
 where = ["src"]
