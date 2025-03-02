@@ -1,4 +1,4 @@
-# ParseThis
+# ParseThisIO
 
 ![Coverage](./coverage.svg)
 ![PyPI](https://img.shields.io/pypi/v/ParseThis)
@@ -6,8 +6,8 @@
 ![License](https://img.shields.io/github/license/jdde/ParseThis)
 
 
-**ParseThis** is a powerful and flexible, tool with zero additional OS dependencies, that makes raw data effortlessly readable and structured for your AI and data processing workflows. Whether you're extracting information from PDFs, transforming files into Markdown or preparing data for LLMs and RAG pipelines, **ParseThis** gets the job done—quickly, effectively, and with a touch of magic.
-Just install as a pip package and enjoy, no configuring around with third party tools before you can use this package. Just parseThis.
+**ParseThisIO** is a powerful and flexible, tool with zero additional OS dependencies, that makes raw data effortlessly readable and structured for your AI and data processing workflows. Whether you're extracting information from PDFs, transforming files into Markdown or preparing data for LLMs and RAG pipelines, **ParseThisIO** gets the job done—quickly, effectively, and with a touch of magic.
+Just install as a pip package and enjoy, no configuring around with third party tools before you can use this package. Just parseThis.io
 
 For some parsers there are API Key's required. They're not required, when you just dont use them - they will error on usage when no api key was found.
 
@@ -54,10 +54,10 @@ source myenv/bin/activate
 
 ## Installation
 
-To install **ParseThis**, use pip:
+To install **ParseThisIO**, use pip:
 
 ```bash
-pip install parsethis
+pip install parsethisio
 ```
 
 ---
@@ -66,52 +66,52 @@ pip install parsethis
 Use the parse() function to auto-detect the current type of content - when the autodetection is not working you can provide more information to help detect the type.
 The auto-parse function accepts any input - file_path, url strings, file byte content.
 ```python
-import parsethis
+import parsethisio
 
 #extract image description for llm
 with open('tests/fixtures/test_data_diagram.png', 'rb') as f:
-    image_description = parsethis.parse(f.read(), result_format=ResultFormat.TXT)
+    image_description = parsethisio.parse(f.read(), result_format=ResultFormat.TXT)
 
 #get transcript of audio
 with open('tests/fixtures/test_data_ttsmaker-test-generated-file.mp3', 'rb') as f:
-    audio_transcript = parsethis.parse(f.read(), result_format=ResultFormat.TXT)
+    audio_transcript = parsethisio.parse(f.read(), result_format=ResultFormat.TXT)
 ```
 
 The generic parse() function detects automatically which parsers will be used based on the file content.
 
 ```python
-import parsethis
+import parsethisio
 
-from parsethis import ResultFormat
+from parsethisio import ResultFormat
 
 
 #automatic parse based on file_path
-parsed_pdf_text = parsethis.parse('tests/fixtures/text_data_meeting_notes.pdf', result_format=ResultFormat.TXT)
+parsed_pdf_text = parsethisio.parse('tests/fixtures/text_data_meeting_notes.pdf', result_format=ResultFormat.TXT)
 
 #automatic parse based on file content
 with open('tests/fixtures/text_data_meeting_notes.pdf', 'rb') as f:
-    parsed_pdf_text = parsethis.parse(f.read(), result_format=ResultFormat.TXT)  # works with any bytes content
+    parsed_pdf_text = parsethisio.parse(f.read(), result_format=ResultFormat.TXT)  # works with any bytes content
 
 #automatic parse based on string
-parsed_github_repository = parsethis.parse('https://github.com/jdde/ParseThis', result_format=ResultFormat.TXT)
+parsed_github_repository = parsethisio.parse('https://github.com/jdde/ParseThis', result_format=ResultFormat.TXT)
 
 #automatic parse based on YouTube URL
-transcribed_youtube_text = parsethis.parse('https://www.youtube.com/watch?v=ca7QkcAGe', result_format=ResultFormat.TXT)
+transcribed_youtube_text = parsethisio.parse('https://www.youtube.com/watch?v=ca7QkcAGe', result_format=ResultFormat.TXT)
 ```
 
 Use the parser detection when you want to just find the parser and configure it differently before it parses the content.
 ```python
-import parsethis
+import parsethisio
 
 with open('tests/fixtures/text_data_meeting_notes.pdf', 'rb') as f:
     file_content = f.read()
-    parser = parsethis.get_parser(file_content)
+    parser = parsethisio.get_parser(file_content)
     text = parser.parse(file_content)
 ```
 
 Or just directly use a parser.
 ```python
-from parsethis import PDFParser
+from parsethisio import PDFParser
 
 with open('tests/fixtures/text_data_meeting_notes.pdf', 'rb') as f:
     text = PDFParser.parse(file_content)

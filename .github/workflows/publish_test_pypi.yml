@@ -32,5 +32,5 @@ jobs:
 
     - name: Verify package
       run: |
-        pip install --index-url https://test.pypi.org/simple/ parsethis
+        pip install --index-url https://test.pypi.org/simple/ parsethisio
 
