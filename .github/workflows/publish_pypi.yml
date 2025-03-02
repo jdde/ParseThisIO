@@ -1,7 +1,10 @@
 name: Publish to PyPI
 
 on:
-  workflow_dispatch:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 
 jobs:
   publish:
@@ -19,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install .
-        pip install setuptools wheel twine
+        pip install setuptools wheel twine build
 
     - name: Build package
       run: python -m build
