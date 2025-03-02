@@ -1,6 +1,6 @@
 import pytest
 from src.content_parser.pdf_parser import PDFParser
-from src.parsethis import ResultFormat
+from src.parsethisio import ResultFormat
 import os
 
 def test_pdf_parser():
