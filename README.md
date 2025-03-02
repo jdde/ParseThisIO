@@ -34,7 +34,7 @@ ParseThis aggregates multiple open source projects to avoid re-implementing a fi
 The mapping of parser to file type can be found in the [ParserMatrix](#parsermatrix---when-is-which-dependency-used).
 
 ```python
-import parsethis
+import parsethisio
 
 #get list of supported file extensions via 
 parsethis.get_supported_extensions()
