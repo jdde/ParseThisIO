@@ -6,12 +6,12 @@
 ![License](https://img.shields.io/github/license/jdde/ParseThis)
 
 
-**ParseThisIO** is a powerful and flexible, tool with zero additional OS dependencies, that makes raw data effortlessly readable and structured for your AI and data processing workflows. Whether you're extracting information from PDFs, transforming files into Markdown or preparing data for LLMs and RAG pipelines, **ParseThisIO** gets the job done—quickly, effectively, and with a touch of magic.
-Just install as a pip package and enjoy, no configuring around with third party tools before you can use this package. Just parseThis.io
+**ParseThisIO** is a powerful and flexible tool with zero additional OS dependencies that makes raw data effortlessly readable and structured for your AI and data processing workflows. Whether you're extracting information from PDFs, transforming files into Markdown, or preparing data for LLMs and RAG pipelines, **ParseThisIO** gets the job done—quickly, effectively, and with a touch of magic.
+Just install as a pip package and enjoy, no configuring around with third-party tools before you can use this package. Just parseThis.io.
 
-For some parsers there are API Key's required. They're not required, when you just dont use them - they will error on usage when no api key was found.
+For some parsers, there are API keys required. They're not required when you just don't use them—they will error on usage when no API key was found.
 
-ParseThis aggregates multiple open source projects to avoid re-implementing a file type mapping for content conversion.
+ParseThis aggregates multiple open-source projects to avoid re-implementing a file type mapping for content conversion.
 
 ## Table of Contents
 - [Features](#features)
