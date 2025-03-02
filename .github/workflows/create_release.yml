@@ -57,6 +57,12 @@ jobs:
           git checkout -b $BRANCH
           echo "branch=$BRANCH" >> $GITHUB_ENV
 
+      - name: Update version in pyproject.toml
+        run: |
+          sed -i "s/^version = \".*\"/version = \"$VERSION\"/" pyproject.toml
+          git add pyproject.toml
+          git commit -m "Bump version to $VERSION"
+
       - name: Push new branch and tag
         run: |
           git push origin ${{ env.branch }}
