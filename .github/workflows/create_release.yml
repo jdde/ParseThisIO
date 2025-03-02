@@ -40,17 +40,18 @@ jobs:
           if [[ ! -z "${{ inputs.version-manual }}" ]]; then
             VERSION="${{ inputs.version-manual }}"
           else
-            PREVIOUS_VERSION=$(git describe --tags --abbrev=0)
+            CURRENT_VERSION=$(grep '^version =' pyproject.toml | sed 's/version = "\(.*\)"/\1/')
+            IFS='.' read -r -a VERSION_PARTS <<< "$CURRENT_VERSION"
             case "${{ inputs.version-type }}" in
-              major) COMMAND='{OFS="."; $1+=1; print "v"$1".0.0"}';;
-              minor) COMMAND='{OFS="."; $2+=1; print $1"."$2".0"}';;
-              patch) COMMAND='{OFS="."; $3+=1; print $1"."$2"."$3}';;
+              major) VERSION_PARTS[0]=$((VERSION_PARTS[0] + 1)); VERSION_PARTS[1]=0; VERSION_PARTS[2]=0;;
+              minor) VERSION_PARTS[1]=$((VERSION_PARTS[1] + 1)); VERSION_PARTS[2]=0;;
+              patch) VERSION_PARTS[2]=$((VERSION_PARTS[2] + 1));;
             esac
-            VERSION=$(echo "$PREVIOUS_VERSION" | awk -F. "$COMMAND")
+            VERSION="${VERSION_PARTS[0]}.${VERSION_PARTS[1]}.${VERSION_PARTS[2]}"
           fi
           git tag "$VERSION" -m "$VERSION"
           echo "version=$VERSION" >> $GITHUB_ENV
-
+      
       - name: Create release branch
         run: |
           BRANCH="release/${{ env.version }}"
