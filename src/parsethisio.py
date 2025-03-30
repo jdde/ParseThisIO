@@ -10,8 +10,8 @@ from src.content_parser.office_parser import OfficeParser
 from src.content_parser.data_parser import DataParser
 from src.content_parser.archive_parser import ArchiveParser
 
-from .exceptions import ParserNotFoundError, UnsupportedMimeTypeError
-from .utils import ResultFormat
+from src.exceptions import ParserNotFoundError, UnsupportedMimeTypeError
+from src.utils import ResultFormat
 PARSERS = [
     AudioParser,
     ImageParser,
