@@ -42,6 +42,6 @@ dev = [
   "pytest"
 ]
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.setuptools]
+package_dir = {"": "src"}
 py_modules = ["parsethisio"]
