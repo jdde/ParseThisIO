@@ -42,5 +42,5 @@ dev = [
   "pytest"
 ]
 
-[tool.setuptools]
-packages = ["src/parsethisio"]
+[tool.setuptools.packages.find]
+where = ["src"]
