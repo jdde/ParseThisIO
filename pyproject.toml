@@ -43,5 +43,8 @@ dev = [
 ]
 
 [tool.setuptools]
-package_dir = { "" = "src" }
-py_modules = ["parsethisio"]
+include-package-data = true
+py-modules = ['parsethisio']
+
+[tool.setuptools.packages.find]
+where = ["src"]
