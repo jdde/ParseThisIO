@@ -2,16 +2,16 @@ import mimetypes
 import filetype
 
 #available parsers
-from src.content_parser.audio_parser import AudioParser
-from src.content_parser.image_parser import ImageParser
-from src.content_parser.pdf_parser import PDFParser
-from src.content_parser.text_parser import TextParser
-from src.content_parser.office_parser import OfficeParser
-from src.content_parser.data_parser import DataParser
-from src.content_parser.archive_parser import ArchiveParser
+from .content_parser.audio_parser import AudioParser
+from .content_parser.image_parser import ImageParser
+from .content_parser.pdf_parser import PDFParser
+from .content_parser.text_parser import TextParser
+from .content_parser.office_parser import OfficeParser
+from .content_parser.data_parser import DataParser
+from .content_parser.archive_parser import ArchiveParser
 
 from .exceptions import ParserNotFoundError, UnsupportedMimeTypeError
-from src.utils import ResultFormat
+from .utils import ResultFormat
 PARSERS = [
     AudioParser,
     ImageParser,
