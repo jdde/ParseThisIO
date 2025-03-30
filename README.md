@@ -37,7 +37,7 @@ The mapping of parser to file type can be found in the [ParserMatrix](#parsermat
 import parsethisio
 
 #get list of supported file extensions via 
-parsethis.get_supported_extensions()
+parsethisio.get_supported_extensions()
 ```
 
 
