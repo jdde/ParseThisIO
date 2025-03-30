@@ -43,5 +43,4 @@ dev = [
 ]
 
 [tool.setuptools]
-package_dir = { "" = "src" }
-py_modules = ["parsethisio"]
+packages = ["src/parsethisio"]
