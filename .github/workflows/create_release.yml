@@ -60,9 +60,9 @@ jobs:
 
       - name: Update version in pyproject.toml
         run: |
-          sed -i "s/^version = \".*\"/version = \"$VERSION\"/" pyproject.toml
+          sed -i "s/^version = \".*\"/version = \"${{ env.version }}\"/" pyproject.toml
           git add pyproject.toml
-          git commit -m "Bump version to $VERSION"
+          git commit -m "Bump version to ${{ env.version }}"
 
       - name: Push new branch and tag
         run: |
