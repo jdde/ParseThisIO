@@ -1,8 +1,8 @@
-from .base_parser import BaseParser
+from parsethisio.content_parser.base_parser import BaseParser
 from PyPDF2 import PdfReader
 from markitdown import MarkItDown
 from io import BytesIO
-from ..utils import ResultFormat
+from parsethisio.utils import ResultFormat
 import tempfile
 
 class PDFParser(BaseParser):

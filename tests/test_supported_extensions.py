@@ -1,5 +1,5 @@
 import unittest
-from src.parsethisio import get_supported_extensions
+from parsethisio import get_supported_extensions
 
 class TestSupportedExtensions(unittest.TestCase):
     def test_supported_extensions(self):

@@ -1,15 +1,15 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from src.content_parser.text_parser import TextParser
+from parsethisio.content_parser.text_parser import TextParser
 import json
-from src.parsethisio import ResultFormat
-from src.exceptions import RegexResultError, RemoteRequestError, NotFoundError
+from parsethisio import ResultFormat
+from parsethisio.exceptions import RegexResultError, RemoteRequestError, NotFoundError
 
 mocked_scraper_response = '''{"title": "Example Domain", "description": "This domain is for use in illustrative examples in documents.", "usage": "You may use this domain in literature without prior coordination or asking for permission.", "more_information_link": "https://www.iana.org/domains/example"}'''
 
 @pytest.fixture
 def mock_scrapegraph_ai():
-    with patch('src.content_parser.text_parser.SmartScraperGraph') as MockSmartScraperGraph:
+    with patch('parsethisio.content_parser.text_parser.SmartScraperGraph') as MockSmartScraperGraph:
         mock_client = MockSmartScraperGraph.return_value
         mock_client.run.return_value = json.loads(mocked_scraper_response)
         yield mock_client
@@ -40,7 +40,7 @@ Constantin Schreiber.
 Good evening to the Tagesschau.'''
 @pytest.fixture
 def mock_youtube_transcript_logic():
-    with patch('src.content_parser.text_parser.YouTubeTranscriptHelper') as MockYouTubeTranscriptHelper:
+    with patch('parsethisio.content_parser.text_parser.YouTubeTranscriptHelper') as MockYouTubeTranscriptHelper:
         mock_client = MockYouTubeTranscriptHelper.return_value
         mock_client.get_best_transcript.return_value = mocked_youtube_transcribe_answer
         mock_client.get_video_title.return_value = mocked_youtube_transcribe_title
@@ -76,7 +76,7 @@ and orientation.
 '''
 @pytest.fixture
 def mock_gitingest_answer():
-    with patch('src.content_parser.text_parser.ingest') as MockIngest:
+    with patch('parsethisio.content_parser.text_parser.ingest') as MockIngest:
         MockIngest.return_value = ('', '', mocked_github_scrape_ingest_content)
 
         yield MockIngest
@@ -105,7 +105,7 @@ def test_text_parser_invalid_input():
 @pytest.fixture
 def mock_scrapegraph_ai_error():
     """Mock SmartScraperGraph to simulate network errors."""
-    with patch('src.content_parser.text_parser.SmartScraperGraph') as MockSmartScraperGraph:
+    with patch('parsethisio.content_parser.text_parser.SmartScraperGraph') as MockSmartScraperGraph:
         mock_client = MockSmartScraperGraph.return_value
         mock_client.run.side_effect = Exception("Network error")
         yield mock_client
@@ -136,7 +136,7 @@ def test_text_parser_youtube_no_transcript(mock_youtube_transcript_logic):
 @pytest.fixture
 def mock_gitingest_error():
     """Mock gitingest to simulate repository not found error."""
-    with patch('src.content_parser.text_parser.ingest') as MockIngest:
+    with patch('parsethisio.content_parser.text_parser.ingest') as MockIngest:
         MockIngest.side_effect = Exception("Repository not found")
         yield MockIngest
 

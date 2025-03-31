@@ -2,16 +2,16 @@ import mimetypes
 import filetype
 
 #available parsers
-from src.content_parser.audio_parser import AudioParser
-from src.content_parser.image_parser import ImageParser
-from src.content_parser.pdf_parser import PDFParser
-from src.content_parser.text_parser import TextParser
-from src.content_parser.office_parser import OfficeParser
-from src.content_parser.data_parser import DataParser
-from src.content_parser.archive_parser import ArchiveParser
+from parsethisio.content_parser.audio_parser import AudioParser
+from parsethisio.content_parser.image_parser import ImageParser
+from parsethisio.content_parser.pdf_parser import PDFParser
+from parsethisio.content_parser.text_parser import TextParser
+from parsethisio.content_parser.office_parser import OfficeParser
+from parsethisio.content_parser.data_parser import DataParser
+from parsethisio.content_parser.archive_parser import ArchiveParser
 
-from src.exceptions import ParserNotFoundError, UnsupportedMimeTypeError
-from src.utils import ResultFormat
+from parsethisio.exceptions import ParserNotFoundError, UnsupportedMimeTypeError
+from parsethisio.utils import ResultFormat
 PARSERS = [
     AudioParser,
     ImageParser,

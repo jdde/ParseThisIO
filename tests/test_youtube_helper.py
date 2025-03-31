@@ -2,8 +2,8 @@ import pytest
 from unittest.mock import patch, MagicMock
 from bs4 import BeautifulSoup, Tag
 from youtube_transcript_api import YouTubeTranscriptApi
-from src.content_parser.helpers.youtube_transcript_helper import YouTubeTranscriptHelper
-from src.exceptions import RegexResultError, RemoteRequestError, NotFoundError
+from parsethisio.content_parser.helpers.youtube_transcript_helper import YouTubeTranscriptHelper
+from parsethisio.exceptions import RegexResultError, RemoteRequestError, NotFoundError
 
 @pytest.fixture
 def sample_urls():
@@ -21,7 +21,7 @@ def mock_requests():
 
 @pytest.fixture
 def mock_transcript_api():
-    with patch('src.content_parser.helpers.youtube_transcript_helper.YouTubeTranscriptApi') as mock_api:
+    with patch('parsethisio.content_parser.helpers.youtube_transcript_helper.YouTubeTranscriptApi') as mock_api:
         mock_list = MagicMock()
         mock_api.list_transcripts = mock_list
         yield mock_api

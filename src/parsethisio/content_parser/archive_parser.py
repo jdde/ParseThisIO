@@ -1,7 +1,7 @@
 from .base_parser import BaseParser
 from markitdown import MarkItDown
 from io import BytesIO
-from ..utils import ResultFormat
+from parsethisio.utils import ResultFormat
 import tempfile
 
 class ArchiveParser(BaseParser):

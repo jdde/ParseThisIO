@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from src.content_parser.audio_parser import AudioParser
-from src.parsethisio import ResultFormat
+from parsethisio.content_parser.audio_parser import AudioParser
+from parsethisio import ResultFormat
 import os
 # src/content_parser/test_audio_parser.py
 
@@ -10,7 +10,7 @@ audio_test_file_transkript = "Welcome to Eleven Degrees, your gateway to the cut
 
 @pytest.fixture
 def mock_openai():
-    with patch('src.content_parser.audio_parser.OpenAI') as MockOpenAI:
+    with patch('parsethisio.content_parser.audio_parser.OpenAI') as MockOpenAI:
         mock_client = MockOpenAI.return_value
         mock_client.audio.transcriptions.create.return_value = MagicMock(
             text=audio_test_file_transkript

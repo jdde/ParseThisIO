@@ -1,10 +1,10 @@
 import unittest
 from unittest.mock import patch, MagicMock
-import src.parsethisio
-from src.content_parser.audio_parser import AudioParser
-from src.content_parser.image_parser import ImageParser
-from src.content_parser.pdf_parser import PDFParser
-from src.content_parser.text_parser import TextParser
+import parsethisio
+from parsethisio.content_parser.audio_parser import AudioParser
+from parsethisio.content_parser.image_parser import ImageParser
+from parsethisio.content_parser.pdf_parser import PDFParser
+from parsethisio.content_parser.text_parser import TextParser
 from io import BytesIO
 import os
 
@@ -14,7 +14,7 @@ class TestAutomaticParserSelection(unittest.TestCase):
     
         with open(file_path, "rb") as f:
             # Call the function
-            parser = src.parsethisio.get_parser(f.read())
+            parser = parsethisio.get_parser(f.read())
 
             #assert parser is of class ImageParser
             assert isinstance(parser, ImageParser)
@@ -24,7 +24,7 @@ class TestAutomaticParserSelection(unittest.TestCase):
     
         with open(file_path, "rb") as f:
             # Call the function
-            parser = src.parsethisio.get_parser(f.read())
+            parser = parsethisio.get_parser(f.read())
 
             #assert parser is of class ImageParser
             assert isinstance(parser, PDFParser)
@@ -34,21 +34,21 @@ class TestAutomaticParserSelection(unittest.TestCase):
     
         with open(file_path, "rb") as f:
             # Call the function
-            parser = src.parsethisio.get_parser(f.read())
+            parser = parsethisio.get_parser(f.read())
 
             #assert parser is of class ImageParser
             assert isinstance(parser, AudioParser)
 
     def test_get_text_parser_by_url(self):
         # Call the function
-        parser = src.parsethisio.get_parser("http://jdde.de", mime_type="text/plain")
+        parser = parsethisio.get_parser("http://jdde.de", mime_type="text/plain")
 
         #assert parser is of class ImageParser
         assert isinstance(parser, TextParser)
 
     def test_get_text_parser_by_url(self):
         # Call the function
-        parser = src.parsethisio.get_parser("This is a normal, awesome text", mime_type="text/plain")
+        parser = parsethisio.get_parser("This is a normal, awesome text", mime_type="text/plain")
 
         #assert parser is of class ImageParser
         assert isinstance(parser, TextParser)

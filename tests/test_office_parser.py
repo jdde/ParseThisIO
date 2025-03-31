@@ -1,6 +1,6 @@
 import os
-from src.content_parser.office_parser import OfficeParser
-from src.utils import ResultFormat
+from parsethisio.content_parser.office_parser import OfficeParser
+from parsethisio.utils import ResultFormat
 import filetype
 
 def test_docx_parser():
