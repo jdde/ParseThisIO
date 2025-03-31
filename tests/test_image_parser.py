@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from src.content_parser.image_parser import ImageParser
-from src.parsethisio import ResultFormat
+from parsethisio.content_parser.image_parser import ImageParser
+from parsethisio.parsethisio import ResultFormat
 # src/content_parser/test_image_parser.py
 import os
 
@@ -21,7 +21,7 @@ graph LR
 
 @pytest.fixture
 def mock_openai():
-    with patch('src.content_parser.image_parser.OpenAI') as MockOpenAI:
+    with patch('parsethisio.content_parser.image_parser.OpenAI') as MockOpenAI:
         mock_client = MockOpenAI.return_value
         mock_client.chat.completions.create.return_value = MagicMock(
             choices=[MagicMock(message=MagicMock(content=image_test_file_as_text))]

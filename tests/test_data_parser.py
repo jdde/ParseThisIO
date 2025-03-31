@@ -1,7 +1,7 @@
 import os
 import mimetypes
-from src.content_parser.data_parser import DataParser
-from src.utils import ResultFormat
+from parsethisio.content_parser.data_parser import DataParser
+from parsethisio.utils import ResultFormat
 
 def test_csv_parser():
     file_path = os.path.join(os.path.dirname(__file__), 'fixtures', 'test_data_table.csv')

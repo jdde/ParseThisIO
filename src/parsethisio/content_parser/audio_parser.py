@@ -1,10 +1,10 @@
-from .base_parser import BaseParser
+from parsethisio.content_parser.base_parser import BaseParser
 from typing import BinaryIO
 from PyPDF2 import PdfReader
 import io
 from openai import OpenAI
 import base64
-from ..utils import ResultFormat
+from parsethisio.utils import ResultFormat
 
 class AudioParser(BaseParser):
     @property

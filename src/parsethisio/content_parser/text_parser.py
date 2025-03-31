@@ -1,13 +1,13 @@
-from .base_parser import BaseParser
+from parsethisio.content_parser.base_parser import BaseParser
 import json
 from scrapegraphai.graphs import SmartScraperGraph
 import re
 import aiohttp
 from bs4 import BeautifulSoup
 from youtube_transcript_api.formatters import TextFormatter
-from src.content_parser.helpers.youtube_transcript_helper import YouTubeTranscriptHelper
+from parsethisio.content_parser.helpers.youtube_transcript_helper import YouTubeTranscriptHelper
 from gitingest import ingest
-from ..utils import ResultFormat
+from parsethisio.utils import ResultFormat
 from typing import Any
 
 class TextParser(BaseParser):

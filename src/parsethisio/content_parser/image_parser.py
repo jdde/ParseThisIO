@@ -1,10 +1,10 @@
-from .base_parser import BaseParser
+from parsethisio.content_parser.base_parser import BaseParser
 from typing import BinaryIO
 from openai import OpenAI
 import base64
-from ..utils import ResultFormat
+from parsethisio.utils import ResultFormat
 from loguru import logger
-from ..exceptions import ParsingFailed
+from parsethisio.exceptions import ParsingFailed
 '''
 Approach: Send image to openAI, get markdown/text back - return it
 '''
