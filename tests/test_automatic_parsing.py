@@ -1,15 +1,15 @@
 import unittest
 from unittest.mock import patch, MagicMock
-import parsethisio.parsethisio
+import parsethisio
 from parsethisio.content_parser.pdf_parser import PDFParser
-from parsethisio.parsethisio import ResultFormat
+from parsethisio import ResultFormat
 import os
 class TestAutomaticParsing(unittest.TestCase):
     def test_get_pdf_parser(self):
         file_path = os.path.join(os.path.dirname(__file__), 'fixtures', 'text_data_meeting_notes.pdf')
     
         with open(file_path, "rb") as f:
-            result = parsethisio.parsethisio.parse(f.read(), result_format=ResultFormat.TXT)
+            result = parsethisio.parse(f.read(), result_format=ResultFormat.TXT)
 
             pypddf2ExpectedText= """YOUR
 COMPANY 

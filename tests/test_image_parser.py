@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, MagicMock
 from parsethisio.content_parser.image_parser import ImageParser
-from parsethisio.parsethisio import ResultFormat
+from parsethisio import ResultFormat
 # src/content_parser/test_image_parser.py
 import os
 

@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch, MagicMock
 from parsethisio.content_parser.text_parser import TextParser
 import json
-from parsethisio.parsethisio import ResultFormat
+from parsethisio import ResultFormat
 from parsethisio.exceptions import RegexResultError, RemoteRequestError, NotFoundError
 
 mocked_scraper_response = '''{"title": "Example Domain", "description": "This domain is for use in illustrative examples in documents.", "usage": "You may use this domain in literature without prior coordination or asking for permission.", "more_information_link": "https://www.iana.org/domains/example"}'''
