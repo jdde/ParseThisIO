@@ -27,11 +27,11 @@ dependencies = [
   "openai==1.70.0",
   "filetype==1.2.0",
   "scrapegraphai==1.46.0",
-  "youtube_transcript_api==1.0.0",
+  "youtube_transcript_api==0.6.3",
   "loguru",
   "gitingest==0.1.4",
   "aiohttp",
-  "markitdown[all]==0.1.1",  # Add Markitdown for enhanced document parsing
+  "markitdown==0.0.2",  # Add Markitdown for enhanced document parsing
   "beautifulsoup4",  # Required for HTML parsing
 ]
 

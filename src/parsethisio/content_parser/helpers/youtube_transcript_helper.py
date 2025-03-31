@@ -84,7 +84,7 @@ class YouTubeTranscriptHelper:
             RemoteRequestError: When we were not able to fetch the youtube url
         """
         try:
-            transcript_list = YouTubeTranscriptApi.list(video_id)
+            transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
 
             # Prioritize manual transcripts
             for lang in preferred_langs:
