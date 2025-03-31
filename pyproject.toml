@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "parsethisio"
 version = "0.2.0"
+
 description = "A Python library to extract text from various sources for LLM preprocessing."
 readme = "README.md"
 requires-python = ">=3.10, <4.0"
