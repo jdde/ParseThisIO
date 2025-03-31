@@ -1,6 +1,6 @@
 import os
-from src.content_parser.archive_parser import ArchiveParser
-from src.utils import ResultFormat
+from parsethisio.content_parser.archive_parser import ArchiveParser
+from parsethisio.utils import ResultFormat
 import filetype
 
 def test_archive_parser():

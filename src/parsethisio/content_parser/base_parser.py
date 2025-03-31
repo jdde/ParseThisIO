@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from ..utils import ResultFormat
+from parsethisio.utils import ResultFormat
 class BaseParser(ABC):
     @abstractmethod
     def parse(self, source, result_format: ResultFormat = ResultFormat.TXT) -> str:

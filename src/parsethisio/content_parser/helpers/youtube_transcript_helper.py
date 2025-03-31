@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 from youtube_transcript_api import YouTubeTranscriptApi
 from loguru import logger
-from ...exceptions import RegexResultError, RemoteRequestError, NotFoundError
+from parsethisio.exceptions import RegexResultError, RemoteRequestError, NotFoundError
 
 class YouTubeTranscriptHelper:
     """Helper class to manage YouTube transcript extraction and metadata retrieval."""

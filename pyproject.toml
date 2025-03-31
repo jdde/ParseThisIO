@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "parsethisio"
-version = "0.2.1"
+version = "0.2.2"
 
 description = "A Python library to extract text from various sources for LLM preprocessing."
 readme = "README.md"
@@ -42,10 +42,3 @@ dev = [
   "coverage-badge",
   "pytest"
 ]
-
-[tool.setuptools]
-include-package-data = true
-py-modules = ['parsethisio']
-
-[tool.setuptools.packages.find]
-where = ["src"]
