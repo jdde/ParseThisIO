@@ -32,4 +32,4 @@ jobs:
 
       - name: Verify installation
         run: |
-          python -c "import parsethisio; print(parsethisio.__version__)"
+          python -c "import parsethisio; print(parsethisio.get_supported_extensions())"
