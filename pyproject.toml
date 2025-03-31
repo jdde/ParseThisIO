@@ -27,7 +27,7 @@ dependencies = [
   "openai",
   "filetype",
   "scrapegraphai",
-  "youtube_transcript_api",
+  "youtube_transcript_api==0.6.3",
   "loguru",
   "gitingest",
   "aiohttp",
