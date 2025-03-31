@@ -31,7 +31,7 @@ dependencies = [
   "loguru",
   "gitingest",
   "aiohttp",
-  "markitdown",  # Add Markitdown for enhanced document parsing
+  "markitdown[all]",  # Add Markitdown for enhanced document parsing
   "beautifulsoup4",  # Required for HTML parsing
 ]
 
