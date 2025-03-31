@@ -24,14 +24,14 @@ dependencies = [
   "requests",
   "PyPDF2",  # Keep PyPDF2 as primary PDF parser
   "coverage",
-  "openai",
-  "filetype",
-  "scrapegraphai",
+  "openai==1.70.0",
+  "filetype==1.2.0",
+  "scrapegraphai==1.46.0",
   "youtube_transcript_api==0.6.3",
   "loguru",
-  "gitingest",
+  "gitingest==0.1.4",
   "aiohttp",
-  "markitdown[all]",  # Add Markitdown for enhanced document parsing
+  "markitdown[all]==0.1.1",  # Add Markitdown for enhanced document parsing
   "beautifulsoup4",  # Required for HTML parsing
 ]
 
