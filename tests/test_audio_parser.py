@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, MagicMock
 from parsethisio.content_parser.audio_parser import AudioParser
-from parsethisio.parsethisio import ResultFormat
+from parsethisio import ResultFormat
 import os
 # src/content_parser/test_audio_parser.py
 
